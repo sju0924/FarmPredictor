@@ -168,4 +168,4 @@ def get_param(prev_data):
 #prev_data = pd.read_csv(os.getcwd()+'/data_analysis/mean_data.csv')
 #a = get_param(prev_data)
 
-a.diff(axis=0).loc[0]
+#a.diff(axis=0).loc[0]

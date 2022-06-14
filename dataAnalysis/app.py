@@ -2,14 +2,15 @@ from flask import Flask, jsonify, request
 from flask_restx import Resource, Api, reqparse
 from flask_cors import CORS
 import pickle
+import joblib
 import numpy as np
 import pandas as pd
+import os
 from get_param import get_param
 
 app = Flask(__name__)
 CORS(app)
 app.config['DEBUG'] = True
-model = pickle.load(open('tree_reg.pkl','rb'))
 
 @app.route('/data_analysis')
 def data_main():
@@ -19,14 +20,38 @@ def data_main():
 def data_predict():
     crop = request.args.get('type', default = 'null', type = str)
     
-    prev_data = pd.read_csv(os.getcwd()+'/data_analysis/mean_data.csv')
+    prev_data = pd.read_csv('./mean_data.csv')
     a = get_param(prev_data)
+    
+    temp_diff_1 = list(a.diff(axis=0).loc[0])[0]
+    humidity_diff_1 = list(a.diff(axis=0).loc[0])[2]
 
-    a.iloc[0] # prediction parameter
-    data = get_param()
-    model.predict()
+    temp_diff_2 = list(a.diff(axis=0).loc[0])[5]
+    humidity_diff_2 = list(a.diff(axis=0).loc[0])[7]
+    data = get_param( a.loc[0])
+    if crop == 'greenonion':
+        model = joblib.load('tree_reg_pa.pkl')
+    elif crop == 'chives':
+        model = joblib.load('tree_reg_chok.pkl')
+    elif crop == 'driedpepper':
+        model = joblib.load('tree_reg_gun.pkl')
+    elif crop == 'garlic':
+        model = joblib.load('tree_reg_ma.pkl')
+    elif crop == 'onion':
+        model = joblib.load('tree_reg_yang.pkl')
+    else:
+        return{
+            "success": False
+        }
+    res = model.predict(data)
     return {
-        "type": crop
+        "success": True,
+        "type": crop,
+        "result": res,
+        "temp_diff_1": temp_diff_1,
+        "temp_diff_2": temp_diff_2,
+        "humidity_diff_1": humidity_diff_1,
+        "humiditi_diff_2":humidity_diff_2
     }
 
 if __name__ == '__main__':
