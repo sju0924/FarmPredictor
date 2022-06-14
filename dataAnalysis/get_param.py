@@ -1,8 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
-import bs4
-from lxml import html
 import numpy as np
 from datetime import date
 import os
