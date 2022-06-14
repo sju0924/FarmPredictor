@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import os
 from get_param import get_param
+from get_prod import get_prod
 
 app = Flask(__name__)
 CORS(app)
@@ -43,14 +44,15 @@ def data_predict():
         model = joblib.load('tree_reg_yang.pkl')
     else:
         return{
-            "success": False
+            "success": 'False'
         }
     res = model.predict([data])
     res = float(res[0])
+    result = get_prod(crop, res)
     return {
-        "success": True,
+        "success": 'True',
         "type": crop,
-        "result": res,
+        "result": result,
         "temp_diff_1": temp_diff_1,
         "temp_diff_2": temp_diff_2,
         "humidity_diff_1": humidity_diff_1,

@@ -27,13 +27,15 @@ def predict_result(request):
     elif type == '양파':
         code ='onion'
     else:
-        return {
-            'msg': '검색 결과가 없습니다.',
-            'success': False
-        }
+         return render(request, 'predict/notfound.html',{
+        'type': type, 
+        'success': 'False'})
     
     data = requests.get('http://'+os.environ.get('host')+'/data_analysis/predict',{'type': code})
     jsondata = data.json()
+    if(jsondata['success'] == 'False'):
+        return "정보가 없습니다."
+    
     crop_rank[type] += 1;
     return render(request, 'predict/result.html',{
         'type': type, 

@@ -1,0 +1,26 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'style_result.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+    maximum-scale=1.0, minimum-scale=1.0">
+    <title>Farm Predictor</title>
+</head>
+<body>
+    <header>
+         <nav>
+            <span class="menutitle">
+                생산량 예측
+              </span>
+            </nav>
+    </header>
+
+    <div class="My-Crop-1">
+        <div class="wrapper">
+            <span class="predictText">
+                {{type}}에 대한 예측 정보가 없습니다. 조만간 업데이트 하겠습니다!    
+            </span>
+        </div>
+    
+        
+    </div>
+</body>

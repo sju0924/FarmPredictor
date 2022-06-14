@@ -1,6 +1,7 @@
 
 # 호출 예시 get_prod('마늘', 7000)
 # pred는 예측 된 생산량
+import pandas as pd
 
 def get_prod(crop_name, pred):
     production = pd.read_csv(crop_name + '_생산량.csv', encoding = 'cp949')

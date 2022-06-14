@@ -17,8 +17,13 @@
     <div class="My-Crop-1">
         <div class="wrapper">
             <span class="predictText">
-                <span class="text-style-1">{{type}}</span>는 전년 대비<br>
-                <span class="text-style-1">생산량 증가</span>가 예상됩니다
+                <span class="text-style-1">{{type}}</span>은(는) 전년 대비<br>
+                <span class="text-style-1">{{res}}</span>
+                {% if res == "생산량 증가" %}
+                가 예상됩니다
+                {% else %}  
+                이 예상됩니다
+                {% endif %}      
             </span>
         </div>
         <div class="weatherBack">
