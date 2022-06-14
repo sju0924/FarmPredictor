@@ -12,4 +12,5 @@ def predict_search(request):
     return render(request, 'predict/search.html', {'crops': crops})
 
 def predict_result(request):
-    return render(request, 'predict/result.html')
+    type = request.GET.get('type', None)
+    return render(request, 'predict/result.html',{'type': type})

@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
-    maximum-scale=1.0, minimum-scale=1.0"
+    maximum-scale=1.0, minimum-scale=1.0">
     <title>Farm Predictor</title>
 </head>
 <body>
@@ -24,8 +24,8 @@
                     예측 생산량을 알려드려요
                 </span>
                 <div style="height: 10%;"></div>
-                <form action="/result">
-                <input id = "crop" type="text" placeholder="작물이름 입력">
+                <form action="/result" method="get">
+                <input name = "type" type="text" placeholder="작물이름 입력">
                 <button type="submit" class="searchbutton"><img src="{% static 'search.png' %}" alt=""></button>
                 </form>
             </div>
