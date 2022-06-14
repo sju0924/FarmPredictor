@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  gateway:
+    build:
+      context: ./gateway
+    container_name: gateway
+    depends_on: 
+      - data_analysis
+    ports:
+      - "80:80"
+    #  - "5000:5000"
+    networks:
+      - farm_net
+
+  data_analysis:
+    build:
+      context: ./dataAnalysis
+    container_name: data_analysis
+    ports:
+      - "5000:5000"
+    command: ["python", "app.py"]
+    networks:
+      - farm_net
+
+networks:
+  farm_net:
