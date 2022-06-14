@@ -6,6 +6,7 @@ services:
     container_name: gateway
     depends_on: 
       - data_analysis
+      - frontend
     ports:
       - "80:80"
     #  - "5000:5000"
@@ -19,6 +20,16 @@ services:
     ports:
       - "5000:5000"
     command: ["python", "app.py"]
+    networks:
+      - farm_net
+
+  frontend:
+    build:
+      context: ./FarmPredictor
+    container_name: frontend
+    ports:
+      - "8000:8000"
+    command: ["python", "manage.py", "runserver","0:8000"]
     networks:
       - farm_net
 
