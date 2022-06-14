@@ -3,7 +3,8 @@ from flask_restx import Resource, Api, reqparse
 from flask_cors import CORS
 import pickle
 import numpy as np
-import sklearn
+import pandas as pd
+from get_param import get_param
 
 app = Flask(__name__)
 CORS(app)
@@ -17,6 +18,13 @@ def data_main():
 @app.route('/data_analysis/predict')
 def data_predict():
     crop = request.args.get('type', default = 'null', type = str)
+    
+    prev_data = pd.read_csv(os.getcwd()+'/data_analysis/mean_data.csv')
+    a = get_param(prev_data)
+
+    a.iloc[0] # prediction parameter
+    data = get_param()
+    model.predict()
     return {
         "type": crop
     }
