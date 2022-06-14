@@ -1,5 +1,3 @@
-import requests
-from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 from datetime import date
@@ -98,4 +96,4 @@ def get_param(prev_data):
 #prev_data = pd.read_csv(os.getcwd()+'/data_analysis/mean_data.csv')
 #a = get_param(prev_data)
 
-a.iloc[0] # prediction parameter
+#a.iloc[0] # prediction parameter
