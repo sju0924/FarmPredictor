@@ -1,12 +1,53 @@
 {% load static %}
 <head>
-    <link rel="stylesheet" href="{% static 'style_search.css' %}">
+    <link rel="stylesheet" href="{% static 'style_result.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
     maximum-scale=1.0, minimum-scale=1.0">
     <title>Farm Predictor</title>
 </head>
-<body><h1>그게 아직 다 못함 ㅎㅎ</h1>
-    {{type}} 은 나중에
-    {{res}} 혹시되나??
-    
-    <body>
+<body>
+    <header>
+         <nav>
+            <span class="menutitle">
+                생산량 예측
+              </span>
+            </nav>
+    </header>
+
+    <div class="My-Crop-1">
+        <div class="wrapper">
+            <span class="predictText">
+                <span class="text-style-1">{{type}}</span>는 전년 대비<br>
+                <span class="text-style-1">생산량 증가</span>가 예상됩니다
+            </span>
+        </div>
+        <div class="weatherBack">
+            <span class="compareText">
+                올해는 지난 동일 기간에 비해
+              </span>
+              <div style = "display: flex">
+                <div class="compareCard">
+                    <span class="compareDetail">
+                        기온이
+                        {% if temp_diff_2 > 0 %}
+                        <span class="text-style-high">{{temp_diff_2}}°C 높습니다</span>
+                        {% else %}  
+                        <span class="text-style-low">{{temp_diff_2}}°C 낮습니다</span>
+                        {% endif %}                 
+                    
+                    </span>
+                </div>
+                <div class="compareCard">
+                    <span class="compareDetail">
+                        습도가
+                        {% if humidity_diff_2 > 0 %}
+                        <span class="text-style-high">{{humidity_diff_2}}%p 높습니다</span>
+                        {% else %}  
+                        <span class="text-style-low">{{humidity_diff_2}}%p 낮습니다</span>
+                        {% endif %}                     
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
