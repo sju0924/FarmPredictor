@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84.295" height="61.683" viewBox="0 0 84.295 61.683">
+    <g data-name="그룹 19">
+        <g data-name="그룹 5" style="opacity:.8">
+            <path data-name="패스 4" d="M292.477 2743.448s.3 15.706 16.362 13.412c.024 0 .411-.04.807-.1" transform="rotate(17 9274.337 558.475)" style="stroke-width:3px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+            <path data-name="패스 5" d="M309.631 2756.38s.834-13.1-17.155-12.592" transform="rotate(17 9275.423 558.669)" style="stroke-width:3px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+            <path data-name="패스 6" d="M305.5 2758.62s-1.863-18.59 17.749-19.333" transform="rotate(17 9277.007 575.668)" style="stroke-width:3px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+            <path data-name="패스 7" d="M305.893 2758.941s.156-.017.9-.14a16.035 16.035 0 0 0 13.581-4.343c2.8-2.73 4.826-7.619 4.521-14.833" transform="rotate(17 9278.713 571.966)" style="stroke-width:3px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+            <path data-name="패스 8" d="M305.893 2763.476s1.723-3.908.539-10.127" transform="rotate(17 9259.733 569.13)" style="stroke-width:3px;stroke:#4e4e4e;fill:none"/>
+        </g>
+        <g data-name="그룹 6" style="opacity:.48">
+            <g data-name="나의작물">
+                <path data-name="패스 4" d="M292.477 2743.448s.223 11.628 12.114 9.93c.018 0 .3-.029.6-.071" transform="rotate(-16 -9492.845 2423.588)" style="stroke-width:2.5px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+                <path data-name="패스 5" d="M305.177 2753.107s.617-9.7-12.7-9.323" transform="rotate(-16 -9494.005 2423.726)" style="stroke-width:2.5px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+                <path data-name="패스 6" d="M305.492 2753.6s-1.379-13.763 13.14-14.313" transform="rotate(-16 -9493.17 2422.672)" style="stroke-width:2.5px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+                <path data-name="패스 7" d="M305.893 2753.926s.116-.013.667-.1a11.871 11.871 0 0 0 10.055-3.216c2.07-2.021 3.573-5.641 3.347-10.982" transform="rotate(-16 -9493.885 2426.288)" style="stroke-width:2.5px;stroke-linecap:round;stroke:#4e4e4e;fill:none"/>
+                <path data-name="패스 8" d="M305.893 2760.847a13.625 13.625 0 0 0 .4-7.5" transform="rotate(-16 -9491.618 2425.97)" style="stroke-width:2.5px;stroke:#4e4e4e;fill:none"/>
+            </g>
+        </g>
+        <g data-name="그룹 4">
+            <g data-name="나의작물">
+                <path data-name="패스 5" d="M319.486 2765.249s1.313-22.32-27.01-21.451" transform="translate(-283.562 -2732.989)" style="stroke-width:3.5px;fill:#fff;stroke-linecap:round;stroke:#4e4e4e"/>
+                <path data-name="패스 7" d="M305.893 2770.039s.246-.027 1.418-.221a25.247 25.247 0 0 0 21.383-6.839c4.4-4.3 7.6-12 7.118-23.354" transform="translate(-269.959 -2737.802)" style="stroke-width:3.5px;fill:#fff;stroke-linecap:round;stroke:#4e4e4e"/>
+                <path data-name="패스 8" d="M305.893 2769.294s2.713-6.153.848-15.945" transform="translate(-269.959 -2720.985)" style="stroke-width:3.5px;fill:#fff;stroke:#4e4e4e"/>
+                <path data-name="패스 6" d="M305.532 2769.727s-2.933-29.27 27.945-30.439" transform="translate(-267.576 -2737.467)" style="fill:#2ec560;stroke-width:3.5px;stroke-linecap:round;stroke:#4e4e4e"/>
+                <path data-name="패스 4" d="M292.477 2743.448s.188 9.784 6.831 16.35c3.583 3.547 9.55 6.108 18.931 4.768.037 0 .648-.062 1.271-.15" transform="translate(-283.576 -2732.663)" style="fill:#2ec560;stroke-width:3.5px;stroke-linecap:round;stroke:#4e4e4e"/>
+            </g>
+        </g>
+        <path data-name="패스 15" d="M-183.349 2325.933s8.786-15.235 35.167-15.06 36.032 15.06 36.032 15.06" transform="translate(186.449 -2265.338)" style="stroke-width:4px;fill:#fff;stroke:#4e4e4e"/>
+    </g>
+</svg>

@@ -11,7 +11,8 @@
     <header>
         
             {%if page.title == '나의작물' %}
-            <nav style = "background-color:aliceblue;">
+            <nav style = "background-color:#fff;">
+                <div style="height:12px"></div>
                 <span class="menutitle" style="color:black">
             {% else %}
             <nav>
@@ -33,8 +34,8 @@
         <nav  class="menufooter">
             <ul>
                 <li><a class="menuLink" href="/"><img src="{% static 'img/홈.png' %}" class="logoimg"><br>홈</a></li>
-                <li><a class="menuLink" href="/predict"><img src="{% static 'img/마이페이지.png' %}" class="logoimg"><br>마이페이지</a></li>
-                <li><a class="menuLink" href="/myfarm"><img src="{% static 'img/나의작물.png' %}" class="logoimg"><br>나의작물</a></li>
+                <li><a class="menuLink" href="/predict"><img src="{% static 'img/나의작물.png' %}" class="logoimg"><br>나의작물</a></li>
+                <li><a class="menuLink" href="/myfarm"><img src="{% static 'img/마이페이지.png' %}" class="logoimg"><br>마이페이지</a></li>
             </ul>
         </nav>
     </footer>

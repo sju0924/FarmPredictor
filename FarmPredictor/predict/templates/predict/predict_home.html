@@ -1,0 +1,22 @@
+{% extends 'predict/base.html'%}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style_predict.css' %}">
+<div class="My-Crop">
+    <div style="height: 70px;"></div>
+        
+    <div class="menucard" onclick="location.href='/predict/search'">
+        <img src="{% static 'svg/plant.svg' %}">
+        <br>
+        <div style="height: 21px;"></div>
+        <span class="menutext">
+            생산량 예측
+        </span>
+    </div>
+    <div>
+       
+    </div>
+</div> 
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="27" viewBox="0 0 44 27">
+    <g data-name="검색 버튼" transform="translate(-259.067 -174.353)">
+        <rect data-name="사각형 9" width="44" height="27" rx="5" transform="translate(259.067 174.353)" style="fill:#2ec560"/>
+        <g data-name="타원 3" style="stroke-linejoin:round;stroke:#fff;stroke-linecap:round;stroke-width:1.5px;fill:none" transform="translate(273.185 179.964)">
+            <circle cx="7.649" cy="7.649" r="7.649" style="stroke:none"/>
+            <circle cx="7.649" cy="7.649" r="6.899" style="fill:none"/>
+        </g>
+        <path data-name="선 1" transform="translate(286.093 192.872)" style="stroke:#fff;stroke-linecap:round;stroke-width:1.5px;fill:none" d="m0 0 2.869 2.869"/>
+    </g>
+</svg>

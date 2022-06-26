@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.09" height="13.991" viewBox="0 0 15.09 13.991">
+    <g data-name="타원 1" transform="translate(3.347)" style="stroke:#4e4e4e;stroke-width:1.3px;fill:none">
+        <circle cx="4.226" cy="4.226" style="stroke:none" r="4.226"/>
+        <circle cx="4.226" cy="4.226" style="fill:none" r="3.576"/>
+    </g>
+    <g data-name="빼기 1" style="stroke-linecap:round;stroke-linejoin:round;fill:none">
+        <path d="M15.09 4.938H0a8.233 8.233 0 0 1 15.09 0z" style="stroke:none" transform="translate(0 9.052)"/>
+        <path d="M12.737 3.638a6.934 6.934 0 0 0-10.384 0h10.384m2.353 1.3H0a8.233 8.233 0 0 1 15.09-.001v.001z" style="fill:#4e4e4e;stroke:none" transform="translate(0 9.052)"/>
+    </g>
+</svg>

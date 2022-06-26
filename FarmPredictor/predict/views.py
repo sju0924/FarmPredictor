@@ -5,11 +5,18 @@ import os
 # Create your views here.
 load_dotenv()
 crop_rank = {'대파':0, '양파':0, '쪽파':0, '건고추':0, '마늘':0}
+def predict_home(request):
+    return render(request, 'predict/predict_home.html',{'page':{'title':'나의작물'}})
+
 def predict_search(request):
     crops=[]
     rank = sorted(crop_rank.items(), key=lambda x: x[1], reverse=True)
     for i, item in enumerate(rank):
-        crops.append({'name': item[0], 'rank':i+1 })
+        if(i<9):
+            r = '0'+str(i+1)
+        else:
+            r = str(i+1)
+        crops.append({'name': item[0], 'rank':r })
         
     return render(request, 'predict/search.html', {'crops': crops,'page':{'title':'생산량 예측'}})
 

@@ -141,9 +141,7 @@
 
   input {
     width: 90%;
-    height: 20px;
-    padding: 10px 10px 10px 10px;
-    margin-bottom: 5px;
+    height: 33px;
     border-radius: 8px;
     border:none;
     background-color: #fff;
@@ -151,8 +149,7 @@
   input:focus {outline: none;}
   .inputwrapper{
     width: 90%;
-    height: 40px;
-    padding: 5px 5px 5px 14px;
+    height: 37px;
     border-radius: 8px;
     border: solid 1.5px #2ec560;
     background-color: #fff;
