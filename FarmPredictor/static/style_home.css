@@ -1,0 +1,44 @@
+.Home {
+    width: 100%;
+    height: 640px;
+    padding: 57px 0 0;
+    background-color: #f3f2f5;
+  }
+  
+  .welcometext{
+    width: 107px;
+    height: 66px;
+    margin: 0 223px 47px 30px;
+    font-family: NotoSansCJKkr;
+    font-size: 22px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.55px;
+    text-align: left;
+    color: #191919;
+  }
+
+  .weathertext {
+    width: 75px;
+    height: 24px;
+    margin: 47px 255px 18px 30px;
+    font-family: NotoSansCJKkr;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    text-align: left;
+    color: #001919;
+  }
+  .weatherbox {
+    width: auto;
+    height: 70px;
+    margin: 18px 30px 34px;
+    padding: 12px 10px 2px 15px;
+    border-radius: 12px;
+    background-color: #fff;
+  }

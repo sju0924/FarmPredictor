@@ -9,19 +9,24 @@
 </head>
 <body>
     <header>
-        
-            {%if page.title == '나의작물' %}
+            {% if page.title == '홈' %}
+            
+            {% elif page.title == '나의작물' %}
             <nav style = "background-color:#fff;">
                 <div style="height:12px"></div>
                 <span class="menutitle" style="color:black">
-            {% else %}
-            <nav>
-                <span class="menutitle">
-            {% endif %}
-            
-                {{page.title}}
+                    {{page.title}}
               </span>
             </nav>
+            {% else %}
+            <nav>
+                <div style="height:12px"></div>
+                <span class="menutitle">
+                    {{page.title}}
+              </span>
+            </nav>
+            {% endif %}            
+                
     </header>
 
     

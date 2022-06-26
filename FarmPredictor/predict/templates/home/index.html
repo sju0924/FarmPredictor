@@ -1,8 +1,19 @@
 {% extends 'predict/base.html'%}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'style_search.css' %}">
-
-<h1>개발중~</h1>
+<link rel="stylesheet" href="{% static 'style_home.css' %}">
+<div style="height:64px;"></div>
+<div class ="home">
+    <span class="welcometext">반갑습니다!</span>
+    {% if nickname %}
+        <span class="welcometext">{{nickname}}님!</span>
+    {% endif %}
+    <div style="height:65px"></div>
+    <span class="weathertext">오늘의 날씨</span>
+    <div style="height:20px"></div>
+    <div class="weatherbox"></div>
+    <div style="height:60px"></div>
+    <span class="weathertext">오늘의 뉴스</span>
+</div>
 
 {% endblock %}

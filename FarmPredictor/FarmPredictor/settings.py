@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'predict',
     'home',
-    'myfarm'
+    'myfarm',
+    'login',
+    
+    'accounts.apps.AccountsConfig',
+    'django.contrib.sites',
+    'rest_framework'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,3 +137,5 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS=['127.0.0.1', 'localhost', 'frontend']
+
+SESSION_SAVE_EVERY_REQUEST = True

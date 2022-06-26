@@ -3,6 +3,8 @@ WORKDIR /usr/src
 RUN pip install django
 RUN pip install requests
 RUN pip install python-dotenv
+RUN pip3 install djangorestframework
+RUN pip3 install account
 COPY . .
 
 EXPOSE 8000
