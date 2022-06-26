@@ -1,51 +1,38 @@
+{% extends 'predict/base.html'%}
+{% block content %}
 {% load static %}
-<head>
-    <link rel="stylesheet" href="{% static 'style_search.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
-    maximum-scale=1.0, minimum-scale=1.0">
-    <title>Farm Predictor</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <span class="menutitle">
-                생산량 예측
-              </span>
-            </nav>
-    </header>
-    <div class="My-Crop-">
-       
-        <div class="Background">
-            
-            <div class="searchwrapper" >
-                <div style="height: 40%;"></div>
-                <span class="notice">
-                    작물을 입력하시면<br>
-                    예측 생산량을 알려드려요
-                </span>
-                <div style="height: 10%;"></div>
-                <form action="/result" method="get">
+<link rel="stylesheet" href="{% static 'style_search.css' %}">
+<div class="Background">
+    
+    <div class="searchwrapper" >
+        <div style="height: 110px;"></div>
+        <span class="notice">
+            작물을 입력하시면<br>
+            예측 생산량을 알려드려요
+        </span>
+        <div style="height: 25px;"></div>
+        <div class="inputwrapper">
+            <form action="/result" method="get">
                 <input name = "type" type="text" placeholder="작물이름 입력">
                 <button type="submit" class="searchbutton"><img src="{% static 'search.png' %}" alt=""></button>
                 </form>
-            </div>
-        </div>    
-
-        
-        <div class="ranking">
-            <span class="othercrops">
-                다른 사람들이 많이 찾은 작물
-            </span>  
-            <div style="height: 40%;"></div>
-            {% for crop in crops%}
-            <div class="searchlist">
-                <p class = "rank">{{crop.rank}}</p>
-                <p>{{crop.name}}</p>
-            </div>
-        {% endfor%}
         </div>
         
     </div>
+</div>    
 
-   
-</body>
+
+<div class="ranking">
+    <span class="othercrops">
+        다른 사람들이 많이 찾은 작물
+    </span>  
+    <div style="height: 40%;"></div>
+    {% for crop in crops%}
+    <div class="searchlist">
+        <p class = "rank">{{crop.rank}}</p>
+        <p>{{crop.name}}</p>
+    </div>
+{% endfor%}
+</div>
+
+{% endblock %}

@@ -11,7 +11,7 @@ def predict_search(request):
     for i, item in enumerate(rank):
         crops.append({'name': item[0], 'rank':i+1 })
         
-    return render(request, 'predict/search.html', {'crops': crops})
+    return render(request, 'predict/search.html', {'crops': crops,'page':{'title':'생산량 예측'}})
 
 def predict_result(request):
     type = request.GET.get('type', None)
@@ -36,7 +36,7 @@ def predict_result(request):
     if(jsondata['success'] == 'False'):
         return "정보가 없습니다."
     
-    crop_rank[type] += 1;
+    crop_rank[type] += 1
     return render(request, 'predict/result.html',{
         'type': type, 
         'success': True,
@@ -44,4 +44,6 @@ def predict_result(request):
         "temp_diff_1": round(jsondata['temp_diff_1'],3),
         "temp_diff_2": round(jsondata['temp_diff_2'],3),
         "humidity_diff_1": round(jsondata['humidity_diff_1'],3),
-        "humidity_diff_2":round(jsondata['humidity_diff_2'],3)})
+        "humidity_diff_2":round(jsondata['humidity_diff_2'],3),
+        'page':{'title':'생산량 예측 결과'}
+        })

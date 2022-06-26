@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+    maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style_search.css' %}">
+    <link rel="stylesheet" href="{% static 'style_base.css' %}">
+    <title>Farm Predictor</title>
+</head>
+<body>
+    <header>
+        
+            {%if page.title == '나의작물' %}
+            <nav style = "background-color:aliceblue;">
+                <span class="menutitle" style="color:black">
+            {% else %}
+            <nav>
+                <span class="menutitle">
+            {% endif %}
+            
+                {{page.title}}
+              </span>
+            </nav>
+    </header>
+
+    
+    <div class="My-Crop-">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <nav  class="menufooter">
+            <ul>
+                <li><a class="menuLink" href="/"><img src="{% static 'img/홈.png' %}" class="logoimg"><br>홈</a></li>
+                <li><a class="menuLink" href="/predict"><img src="{% static 'img/마이페이지.png' %}" class="logoimg"><br>마이페이지</a></li>
+                <li><a class="menuLink" href="/myfarm"><img src="{% static 'img/나의작물.png' %}" class="logoimg"><br>나의작물</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
