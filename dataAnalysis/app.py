@@ -46,15 +46,15 @@ def data_predict():
     humidity_diff_2 = list(a.diff(axis=0).loc[0])[7]
     data = a.loc[0]
     if crop == 'greenonion':
-        model = joblib.load('tree_reg_pa.pkl')
+        model = joblib.load('/trained_model/tree_reg_pa.pkl')
     elif crop == 'chives':
-        model = joblib.load('tree_reg_chok.pkl')
+        model = joblib.load('/trained_model/tree_reg_chok.pkl')
     elif crop == 'driedpepper':
-        model = joblib.load('tree_reg_gun.pkl')
+        model = joblib.load('/trained_model/tree_reg_gun.pkl')
     elif crop == 'garlic':
-        model = joblib.load('tree_reg_ma.pkl')
+        model = joblib.load('/trained_model/tree_reg_ma.pkl')
     elif crop == 'onion':
-        model = joblib.load('tree_reg_yang.pkl')
+        model = joblib.load('/trained_model/tree_reg_yang.pkl')
     else:
         return{
             "success": 'False'
