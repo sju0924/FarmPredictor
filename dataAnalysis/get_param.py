@@ -61,7 +61,7 @@ def get_quater(raw_data, year, quat):
     
     
     df = df.drop(['date_time'], axis = 1)
-
+    df = df.replace('',np.NaN)
     df = df.astype(float)
     df = df.fillna(method='ffill', limit=10)
     df = df.fillna(method='bfill', limit=10)
@@ -72,14 +72,24 @@ def get_quater(raw_data, year, quat):
     return result
 
 
-def get_param(prev_data):
+def get_param(prev_data, feature):
     cur_year = date.today().year
     url = 'http://apis.data.go.kr/1390802/AgriWeather/WeatherObsrInfo/InsttWeather/getWeatherYearMonList'
     params = {'serviceKey' : 'JmVxAGVsWxHDkatDGw5YlKfJn4iJKnsjTbD17s9mFVRH6n1U/FDHGHRxHQVT+KFXvxwkGoQAeixkTZoRWoFJAw==', 'Page_No' : '1', 'Page_Size' : '10', 'search_Year' : cur_year, 'obsr_Spot_Code' : '380959A001'}
     cur_data = api_reference(url, params)
     
-    preded_data = cur_data.loc[:,['tmprt_150','arvlty_300','hd_150','soil_mitr_10','solrad_qy','date_time']]
+    preded_data = cur_data.drop(['no','obsr_spot_nm','tmprt_150top','tmprt_150lwet','tmprt_50top','tmprt_50lwet',
+              'tmprt_400top','tmprt_400lwet'], axis=1)
     
+    
+    
+    preded_data.columns = ['관측지점코드', 'date_time','기온150CM', '기온50CM', '기온400CM', '습도150CM', '습도50CM',
+                           '습도400CM','풍향300CM','풍향150CM','풍향1000CM','풍속300CM','풍속150CM','풍속1000CM',
+                           '강수량','증발량','일조시간','일사량','결로시간','수중온도','초상온도','지중열전도량10CM',
+                           '지중온도10CM','지중온도5CM','지중온도20CM','토양수분10CM','토양수분보정값10CM','토양수분20CM',
+                           '토양수분보정값20CM','토양수분30CM','토양수분보정값30CM']
+
+    preded_data.drop(['관측지점코드'], axis = 1, inplace = True)
     quat_info = pd.DataFrame(columns = preded_data.columns)
     quat_info['year_quat']=""    
     
@@ -143,14 +153,9 @@ def get_param(prev_data):
     for data in merged_data:
         merged.loc[len(merged)] = data
     
-   
+    merged = merged[feature]
     
-    merged = merged.drop(['soil_mitr_10_2','soil_mitr_10_3','soil_mitr_10_4'], axis = 1)
-    
-    merged.columns= ['기온150CM_1', '풍향300CM_1', '습도150CM_1', '토양수분10CM_1', '일사량_1',
-       '기온150CM_2', '풍향300CM_2', '습도150CM_2', '일사량_2', '기온150CM_3',
-       '풍향300CM_3', '습도150CM_3', '일사량_3', '기온150CM_4', '풍향300CM_4',
-        '습도150CM_4', '일사량_4']
+
     
     merged.loc[1] =(list(prev_data.loc[30][1:18]))
     
@@ -163,7 +168,6 @@ def get_param(prev_data):
     merged = merged.reindex(index=[1,0])
     
     return merged
-
 
 #prev_data = pd.read_csv(os.getcwd()+'/data_analysis/mean_data.csv')
 #a = get_param(prev_data)
