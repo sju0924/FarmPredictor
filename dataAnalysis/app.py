@@ -6,8 +6,10 @@ import joblib
 import numpy as np
 import pandas as pd
 import os
+import csv
 from get_param import get_param
 from get_prod import get_prod
+
 
 app = Flask(__name__)
 CORS(app)
@@ -21,9 +23,20 @@ def data_main():
 def data_predict():
     crop = request.args.get('type', default = 'null', type = str)
     
+    f = open('feature.csv', 'r', encoding='cp949')
+    rdr = csv.reader(f)
+    features = list(rdr)
+    f.close() 
+
+    for i in range(len(features)):
+        if features[i][-1] == crop:
+            feature = features[i]
+            del(feature[-1])
+        
     raw_data = pd.read_csv('mean_data.csv')
     print(raw_data)
-    a = get_param(raw_data)
+    
+    a = get_param(raw_data,feature)
     
     
     temp_diff_1 = list(a.diff(axis=0).loc[0])[0]
