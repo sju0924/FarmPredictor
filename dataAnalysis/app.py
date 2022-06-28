@@ -29,6 +29,7 @@ def data_predict():
     f.close() 
 
     for i in range(len(features)):
+        features[i] = ' '.join(features[i]).split()
         if features[i][-1] == crop:
             feature = features[i]
             del(feature[-1])
