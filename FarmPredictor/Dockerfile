@@ -5,6 +5,7 @@ RUN pip install requests
 RUN pip install python-dotenv
 RUN pip3 install djangorestframework
 RUN pip3 install account
+RUN pip3 install beautifulsoup4
 COPY . .
 
 EXPOSE 8000
