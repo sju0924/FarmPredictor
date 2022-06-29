@@ -25,19 +25,21 @@ def article_parsing(url):
 
     # html parser
     web = BeautifulSoup(requests.get(url, allow_redirects=False, headers=header).text, 'html.parser')
-
-    # 제목
-    title = web.find("meta", property="og:title")['content']
-
-    # 요약 내용
-    description = web.find('meta', property="og:description")['content']
     
-    # 대표 이미지 url
-    image_url = web.find("meta", property="og:image")['content']
+    try:
+        title = web.find("meta", property="og:title")['content']
 
-    # 대표이미지 객체
-    
-    return {'title':title, 'description' : description,  'image_url':image_url, 'url':url }
+        # 요약 내용
+        description = web.find('meta', property="og:description")['content']
+        
+        # 대표 이미지 url
+        image_url = web.find("meta", property="og:image")['content']
+        print(title, description, image_url)
+        # 대표이미지 객체
+        
+        return {'title':title, 'description' : description,  'image_url':image_url, 'url':url, 'success':True }
+    except :
+        return{'success':False}
 
 def index(request):
     if 'nickname' in request.session:
@@ -45,10 +47,11 @@ def index(request):
     else:
         nick = ""
     words=search_news('감자 가격')
-    print(words)
     news=[]
     for item in words['items']:
-        news.append(article_parsing(item['link']))
+        data = article_parsing(item['link'])
+        if data['success']:
+            news.append(data)
         
     
     print(news)

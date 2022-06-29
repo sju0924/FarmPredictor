@@ -46,7 +46,35 @@ def callback(request):
     request.session['id'] = user_json['id']
     request.session['nickname']=user_json['kakao_account']['profile']['nickname']
     request.session['token'] = tokenJson['access_token']
-        
+
+    regionurl = 'http://'+os.environ.get('BACKEND_HOST')+":"+os.environ.get('BACKEND_PORT')+'/user/region'
+    data={
+        'id': request.session['id']
+    }
+    res = requests.get(regionurl,params=data) 
+    reg_json=res.json()
+    print ('로그인 정보:', request.session['id'], reg_json)
+    if(reg_json['success'] and reg_json['data']['count'] > 0):
+        return redirect('/')
+    else:
+        return redirect('/login/region')
+    
+
+def region(request):
+    return render(request, 'home/region.html',{})
+
+def submit(request):
+    region = request.GET['region']
+    reg2 = request.GET['reg2'] 
+
+    url = 'http://'+os.environ.get('BACKEND_HOST')+":"+os.environ.get('BACKEND_PORT')+'/user/add'
+    data={
+        'id' : request.session['id'],
+        'name': request.session['nickname'],
+        'region': region,
+        'reg2': reg2
+    }
+    res = requests.get(url, params=data)
     return redirect('/')
 
 def logout(request):

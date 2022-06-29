@@ -23,7 +23,7 @@
   .weathertext {
     width: 75px;
     height: 24px;
-    margin: 47px 255px 18px 30px;
+    margin: 47px 100px 18px 30px;
     font-family: NotoSansCJKkr;
     font-size: 16px;
     font-weight: bold;
@@ -47,7 +47,8 @@
     width: 100%;
     height: 176px;
     margin: 0 0 26px;
-    padding: 59px 204px 59px 30px;
+    padding-bottom: 59px;
+    padding-top:20px;
     top:0;
     background-color: #fee500;
   }

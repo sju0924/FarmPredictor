@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, 
+    maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style_search.css' %}">
+    <link rel="stylesheet" href="{% static 'style_base.css' %}">
+    <title>Farm Predictor</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/region.js' %}"></script>
+</head>
+<body>
+    <form action="/login/submit" method="get" style="height:37px;">
+        <select name="region" id="region"></select>
+        <select name="reg2" id="reg2"></select>
+        <button type="submit"></button>    
+    </form>
+    
+</body>

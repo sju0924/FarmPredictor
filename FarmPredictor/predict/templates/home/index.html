@@ -2,9 +2,10 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'style_home.css' %}">
+{% if nickname %}
 <div style="height:64px;"></div>
-
-<div class ="home">
+{% endif %}
+<div class ="Home">
     {% if nickname %}
     <span class="welcometext">반갑습니다!</span>
     <br>
@@ -19,22 +20,25 @@
     <div class="weatherbox" style="display:flex">
         {% for item in news %}
         <a href="{{item.url}}">
-        <div class="jb-wrap">
-			<div class="jb-image"><img src="{{item.image_url}}" style="width: 138px;height:94px;" alt=""></div>
-			<div class="jb-text" style="width:138px;">
-				<p style="color:white">{{item.title}}</p>
-			</div>
-		</div>
-    </a>
+            <div class="jb-wrap">
+                <div class="jb-image"><img src="{{item.image_url}}" style="width: 138px;height:94px;" alt=""></div>
+                <div class="jb-text" style="width:138px;">
+                    <p style="color:white">{{item.title}}</p>
+                </div>
+            </div>
+        </a>
         {% endfor %}
     </div>
     {% else %}
     <div class="kakaohead">
-        <span class="logintext">
-            카카오계정으로
-            <br>
-        <span class="text-style-1">로그인</span>
-        </span>
+        <div class="kakaotext" style="margin:20px 0 0 20px">
+            <span class="logintext">
+                카카오계정으로
+                <br>
+            <span class="text-style-1">로그인</span>
+            </span>
+        </div>
+        
     </div>
     <span class="noticetext">
         카카오톡 계정으로 간편하게 로그인 후
@@ -45,13 +49,13 @@
       </span>
       <br>
       <div style="height:400px"></div>
-    <div style="text-align:center">
+    <div style="text-align:center;margin-bottom: 64px;">
         <a href="/login">
             <img src="{% static 'img/kakao_login_large_wide.png' %}"
             class="kakao_login_large_wide">
         </a>
     </div>
-      
+    
       
 
 </div>
