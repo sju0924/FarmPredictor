@@ -1,4 +1,4 @@
-import {getRegion, init, addUser, addFavor} from '../service/userService'
+import {getRegion, init, addUser, addFavor,getFavor} from '../service/userService'
 
 var db_init=async(req:any, res:any)=>{
     init();
@@ -73,5 +73,23 @@ var get_region=async(req:any,res:any)=>{
     }  
     
 }
+var get_favor=async(req:any,res:any)=>{
+    try{
+        console.log(req.query)
+        let data = await getFavor(req.query.id)
+          
+        res.send({
+            "msg":"조회 완료",
+            "success":true,
+            "data":data
+        });
+        
+       
+    }
+    catch{
+        res.send(500);
+    }  
+    
+}
 
-export {get_region,db_init,add_user,add_favor}
+export {get_region,db_init,add_user,add_favor, get_favor}

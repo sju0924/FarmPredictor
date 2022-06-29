@@ -38,15 +38,10 @@ class userdao{
     }
     
     get_favor:any = async(dto:userdto)=>{
-        let favors = dto.get_favor()
-        let sql:string;
-        favors.forEach(async(element) => {
-            let item = [dto.get_id(), element];
-            sql ='INSERT INTO favor(id, crop) values(?,?)';
-            let [rows, fields] = await conn.promise().query(sql,[dto.get_id()]);
-            console.log(rows);
-        });
+        let sql:string = "SELECT crop FROM favor WHERE id = ?;";
         
+        let [rows, fields] = await conn.promise().query(sql,[dto.get_id()]);
+        return rows;
     }
     add_favor:any=async(id:number, newitem:string)=>{
         let item = [id, newitem];

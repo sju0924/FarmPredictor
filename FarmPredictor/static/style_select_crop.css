@@ -1,0 +1,120 @@
+
+
+.main_head {
+    width: 166px;
+    height: 72px;
+    margin: 23.8px 97px 25px 9px;
+    font-family: NotoSansCJKkr;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: center;
+    align-items: center;
+    color: #2ec560;
+  }
+  .text-style-1 {
+    font-weight: normal;
+  }
+
+  .back {
+    width: 100%;
+    height: 1172px;
+    padding: 80.2px 0 110px 21px;
+    background-color: rgba(127, 255, 0, 0.03);
+  }
+
+  .select_crop_main{
+    width: 81px;
+    height: 61px;
+    margin: 0 34.2px 23.8px 52px;
+    
+    object-fit: contain;
+  }
+
+  .sub_title{
+    width: 216px;
+    height: 40px;
+    margin: 25px 72px 35px 51px;
+    font-family: NotoSansCJKkr;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: -0.35px;
+    text-align: center;
+    align-items: center;
+    color: #191919;
+  }
+
+  .span1 {
+    width: 58px;
+    height: 24px;
+    margin: 35px 9px 3px;
+    font-family: NotoSansCJKkr;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+    text-align: left;
+    color: #000;
+  }
+
+  .wrap {max-width:500px; margin:5px auto;}
+
+  /* 가로 스크롤 적용 */
+  .scroll__wrap {overflow-x:auto; white-space:nowrap; font-size:0}
+  .scroll--element {display:inline-block;  font-size:16px; line-height:150px; text-align:center;}
+  .scroll--element + .scroll--element {margin-left:1px; margin-right: 1px;}
+  
+  .scroll__wrap::-webkit-scrollbar{
+    display: none; 
+}
+
+.button {
+    width: 250px;
+    height: 3%;
+    margin: 3px 20px 116px 9px;
+    padding: 12px 74px 11px;
+    border-radius: 24px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #2ec560;
+    position: fixed;
+    align-items: center;
+  }
+
+  .button_span{
+    width: 200px;
+    height: 4%;
+    font-family: NotoSansCJKkr;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.45px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+  }
+  .center{
+      text-align: center;
+      align-items: center;
+  }
+  .header {
+    color: white;
+    justify-content: space-between;
+  }
+  .trans{
+      border : none;
+      background-color: rgba(0, 0, 0, 0);
+  }
+  .crops{
+      align-items: left;
+      text-align: left;
+  }

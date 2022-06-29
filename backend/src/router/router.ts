@@ -1,5 +1,5 @@
 import express from "express"
-import {get_region,db_init,add_user,add_favor} from "../controller/controller"
+import {get_region,db_init,add_user,add_favor,get_favor} from "../controller/controller"
 const Router = express.Router();
 Router.use(express.json()); //json 형태로 parsing
 Router.use(express.urlencoded( {extended : false } )); 
@@ -18,5 +18,5 @@ Router.get('/user/region',get_region);
 Router.get('/init',db_init);
 Router.get('/user/add', add_user);
 Router.get('/user/add/favor',  add_favor);
-
+Router.get('/user/favor',  get_favor);
 export {Router}

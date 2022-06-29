@@ -33,7 +33,7 @@ services:
     networks:
       - farm_net
   database:
-    image: mariadb:10.7.4
+    image: mariadb:10.8.2
     container_name: database
     ports:
       - "3306:3306"

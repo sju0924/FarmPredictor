@@ -48,6 +48,19 @@ var addFavor=async(id:number, item:string)=>{
 
 }
 
+var getFavor=async(id:number)=>{
+    let dao = new userdao();
+    let dto = new userdto(id,"","","",[]);     
+    var data:any = await dao.get_favor(dto);
+    var res:any=[]
+    console.log(data);
+    for(var i = 0 ; i<data.length;i++){
+        res.push(data[i].crop);
+    }
+    return res;
+
+}
+
 var init=async()=>{
     let dao = new userdao();    
     var data = await dao.init();
@@ -58,4 +71,4 @@ var init=async()=>{
     }
     return ret;
 }
-export{getRegion, setRegion,init,addUser, addFavor}
+export{getRegion, setRegion,init,addUser, addFavor, getFavor}
