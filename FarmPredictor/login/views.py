@@ -61,7 +61,7 @@ def callback(request):
     
 
 def region(request):
-    return render(request, 'home/region.html',{})
+    return render(request, 'home/get_address.html',{})
 
 def submit(request):
     region = request.GET['region']

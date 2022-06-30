@@ -1,0 +1,25 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{% static 'style_get_address.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+<script src="{% static 'js/region.js' %}"></script>
+<div class="whole ">
+    <div class="title">지역별 맞춤형 생산량 예측 <br> 서비스를 제공합니다.<br>
+        <span class="text-style-1">농장이 위치한 지역을 선택해주세요.</span>
+        <div class="line">
+        </div>
+    </div>
+    <form action="/login/submit" method="get" style="height:37px;">
+        <div class ="sub">
+            시/도      구/군
+          </div>
+        <select name="region" id="region"></select>
+        <select name="reg2" id="reg2"></select>
+        <button type="submit" class="ok"><span class="ok_text">지역 선택 완료</span></button>    
+    </form>
+
+
+</div>
