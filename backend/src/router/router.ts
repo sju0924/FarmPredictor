@@ -14,9 +14,9 @@ Router.post('/dashboard',function(req,res){
     console.log(req.body);
     res.send(req.body);
 })
-Router.get('/user/region',get_region);
-Router.get('/init',db_init);
-Router.get('/user/add', add_user);
-Router.get('/user/add/favor',  add_favor);
-Router.get('/user/favor',  get_favor);
+Router.get('/backapi/user/region',get_region);
+Router.get('/backapi/init',db_init);
+Router.get('/backapi/user/add', add_user);
+Router.get('/backapi/user/add/favor',  add_favor);
+Router.get('backapi/user/favor',  get_favor);
 export {Router}

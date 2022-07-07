@@ -22,7 +22,12 @@ def data_main():
 @app.route('/data_analysis/predict')
 def data_predict():
     crop = request.args.get('type', default = 'null', type = str)
-    
+    address = request.args.get('address', default = 'null', type = str)
+    address_code = -1
+
+    if address == '서울시':
+        pass
+
     f = open('feature.csv', 'r', encoding='cp949')
     rdr = csv.reader(f)
     features = list(rdr)

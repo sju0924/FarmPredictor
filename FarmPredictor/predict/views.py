@@ -37,7 +37,8 @@ def predict_result(request):
          return render(request, 'predict/notfound.html',{
         'type': type, 
         'success': 'False'})
-    
+    address = requests.get('http://'+os.environ.get('host')+'/backapi/user/region',{'id': request.session['id']})
+    print(address)
     data = requests.get('http://'+os.environ.get('host')+'/data_analysis/predict',{'type': code})
     jsondata = data.json()
     if(jsondata['success'] == 'False'):
@@ -48,9 +49,9 @@ def predict_result(request):
         'type': type, 
         'success': True,
         'res': jsondata['result'],
-        "temp_diff_1": round(jsondata['temp_diff_1'],3),
-        "temp_diff_2": round(jsondata['temp_diff_2'],3),
-        "humidity_diff_1": round(jsondata['humidity_diff_1'],3),
-        "humidity_diff_2":round(jsondata['humidity_diff_2'],3),
+        "temp_diff_1": round(jsondata['temp_diff_1'],1),
+        "temp_diff_2": round(jsondata['temp_diff_2'],1),
+        "humidity_diff_1": round(jsondata['humidity_diff_1'],1),
+        "humidity_diff_2":round(jsondata['humidity_diff_2'],1),
         'page':{'title':'생산량 예측 결과'}
         })
